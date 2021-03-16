@@ -77,3 +77,6 @@ NOTE: If your tFile expects an existing database, follow these instructions:
 ```testDb.insertAll()```
 - if you need all tables dropped AND created AND populated, call  
 ```testDb.freshPopulatedDb()``` instead of dropAll, createALL, and insertALL
+
+The output of this program will print to the terminal as follows:
+![image](https://user-images.githubusercontent.com/45299665/111374494-6aaf8b00-865a-11eb-88c1-8b5725fcf1f8.png)
