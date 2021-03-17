@@ -29,6 +29,8 @@ This program provides an easy to use testing interface for SQLite3 scripts using
 ### File Organization
 ```
 SQLiteTestClient/
+    documentation/
+        testClientDocs.md
     src/
         analyze/
             oneLongFile.sql
