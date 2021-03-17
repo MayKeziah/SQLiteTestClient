@@ -50,11 +50,12 @@ def main():
   testDb.freshPopulateDb()
 
   testDb.queryAll()
-  # To see nicely formatted queries and results, uncomment the following:
+  ''' To see nicely formatted queries and results, uncomment the following: '''
   # testDb.queryAll(1)
 
-  # To see line-by line file parsing with error reporting, 
-  # enter an error-ridden file for tFile and uncomment the following:
+  ''' To see line-by line file parsing with error reporting, 
+      enter an error-ridden file for tFile and uncomment the following: 
+  '''
   # tFile = "analyze/oneLongFile.sql"
   # testDb.dropAll()
   # testDb.testFile(tFile)
