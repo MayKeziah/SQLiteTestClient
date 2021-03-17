@@ -23,8 +23,37 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Purpose
+## How To Use 
 This program provides an easy to use testing interface for SQLite3 scripts using Python 3.8.3.
+
+### File Organization
+```
+SQLiteTestClient/
+    src/
+        analyze/
+            oneLongFile.sql
+        create/
+            create1.sql
+            create2.sql
+            create3.sql
+        database/
+            exampleDatabaseFile.db
+        insert/
+            insert1.sql
+            insert2.sql
+            insert3.sql
+        output/
+            output.txt
+        query/
+            selectUC1.sql
+            selectUC2.sql
+            selectUC3.sql
+        globals.py
+        testClient.py
+    .gitignore
+    LICENSE
+    README.md
+```
 
 ### Installation
 Open the globals.py file and change all the global variables to match your database's file organization. Update textClient.py main() function to complete the desired operations. Then, run testClient.py. To learn about the operations performed by this program, read the "Functionality" section. 
