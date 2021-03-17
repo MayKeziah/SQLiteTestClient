@@ -293,7 +293,7 @@ class Database():
   # Execute sql code
   def execute(self, string):
     # Execute script
-    self.query.execute(string)
+    self.query = self.query.execute(string)
 
     # Fetch results (if any)
     result = self.query.fetchall()
@@ -312,12 +312,12 @@ class Database():
       for i in range(len(list[0]) - 1):
         string = string + "?,"
       string = string + "?)"
-    self.query.executemany(string, list)
+    self.query = self.query.executemany(string, list)
     self.db.commit()
 
   # Like execute but for multiple statements
   def executeScript(self, string):
-    self.query.executescript(string)
+    self.query = self.query.executescript(string)
     self.db.commit()
     return self.query.fetchall()
 

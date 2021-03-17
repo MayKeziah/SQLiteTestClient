@@ -99,20 +99,36 @@ The path, file name, and extension for your output file from the location of ```
 i.e. ```"output/output.txt"```
 
 ## ```testClient.py```: TestClient Class
-### ```TestClient()```
-### ```close()```
-### ```refreshDb()```
-### ```freshPopulateDb()```
-### ```dropAll()```
-### ```createAll()```
-### ```insertAll()```
-### ```queryAll()```
-### ```testFile()```
-
+This class provides automated database creation, testing, and SQLite script error reporting.
+### ```TestClient.TestClient()```
+Connects to database (in ```globals.py```) and prints statements about actions taken.
+### ```TestClient.close()```
+Closes database and prints statementa about actions taken.
+### ```TestClient.refreshDb()```
+Calls ```self.dropAll()``` and ```self.createAll()```.
+### ```TestClient.freshPopulateDb()```
+Calls ```self.dropAll()```, ```self.createAll()```, and ```self.insertAll()```.
+### ```TestClient.dropAll()```
+Gets the name of each table currently in the database and drops each one (permanent deletion of all tables). Results are printed to the terminal. Supports error reporting and pass/fail reporting.
+### ```TestClient.createAll()```
+Traverses the create files (in ```globals.py```) and creates each table in the database. Results are printed to the terminal. Supports error reporting and pass/fail reporting.
+### ```TestClient.insertAll()```
+Traverses the insert files in the specified order (in ```globals.py```) and executes each insertion on the database. Results are printed to the terminal.
+### ```TestClient.queryAll(printResult=0:boolean)```
+Traverses the map of queries (in ```globals.py```), executes each select statement, grabs the returned tuples, and compares them to the list of expected tuples in the map of queries (in ```globals.py```). Results are printed to the terminal. Supports error reporting, pass/fail reporting, and warnings if the correct tuples are returned in the wrong order. 
+### ```TestClient.testFile(filePath:string)```
+Runs the SQLite script in the given ```filePath```. The file is read line-by-line. When the program reaches a ';', the line is executed. Any errors are reported with the line that the ';' was found on, the script that was attempted, and a description of the error.
 ## ```testClient.py```: Database Class
-### ```Database(filePath: string)```
-### ```execute(SqlScript:string)```
-### ```insertMany()```
-### ```executeScript()```
-### ```close()```
-### ```getAllTables()```
+This class provides a simple interface with the Python Sqlite3 library. 
+### ```Database.Database(filePath:string)```
+Creates a connection with the database at the ```filePath``` and gets the cursor.
+### ```Database.execute(SqlScript:string)```
+Executes a single SQL statement, ```SqlScript```.
+### ```Database.insertMany(tableName:string, listOfTuplesToAdd:list)```
+Given a ``listOfTuplesToAdd`` which is a list of tuples, and a ```tableName``` which is a string, this function inserts all the tuples into the table in the database. For this to execute successfully, the table must exist in the database and the tuples must have a value for each column.
+### ```Database.executeScript(SqlScript:string)```
+Executes multiple SQL statements, ```SqlScript```.
+### ```Database.close()```
+Closes the database.
+### ```Database.getAllTables()```
+Returns a list of the names of all tables currently in the database.
