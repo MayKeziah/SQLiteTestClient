@@ -25,7 +25,7 @@
   - [```TestClient.insertAll()```](#testclientinsertall)   
   - [```TestClient.queryAll(printResult=0:boolean)```](#testclientqueryallprintresult0boolean)   
   - [```TestClient.testFile(filePath:string)```](#testclienttestfilefilepathstring) 
-  - [```testClient.py```: Database Class](#testclientpy-database-class)   
+- [```testClient.py```: Database Class](#testclientpy-database-class)   
   - [```Database.Database(filePath:string)```](#databasedatabasefilepathstring)   
   - [```Database.execute(SqlScript:string)```](#databaseexecutesqlscriptstring)   
   - [```Database.insertMany(tableName:string, listOfTuplesToAdd:list)```](#databaseinsertmanytablenamestring-listoftuplestoaddlist)   
