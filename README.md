@@ -58,7 +58,7 @@ SQLiteTestClient/
 ```
 
 ### Installation
-Open the globals.py file and change all the global variables to match your database's file organization. Update textClient.py main() function to complete the desired operations. Then, run testClient.py. To learn about the operations performed by this program, read the "Functionality" section. 
+Open the globals.py file and change all the global variables to match your database's file organization. Update textClient.py main() function to complete the desired operations. Then, run testClient.py. To learn about the operations performed by this program, read the documentation or the summary below. 
 
 ### Functionality
 Using this program, you can drop all the tables in a SQLite database, create tables from a directory of create files, populate the database from a directory of insert files, test a series of queries from a directory of queries, and find the location of a bug in a SQLite script. 
