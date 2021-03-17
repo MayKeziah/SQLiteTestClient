@@ -226,6 +226,16 @@ class TestClient():
   # Use to test a file full of sql scripts. 
   # Each command from beginning to ';' must be in a single line.
   def testFile(self, file):
+        
+    # Is this the end of a statement? (does it end with ';*' where * = 0 or more ' ')
+    def eOfStatement(string):
+      if (not len(string)):
+        return False
+      i = len(string) - 1
+      while(i >= 0 and (string[i] == ' ' or string[i] == '\n')):
+        i -= 1
+      return False if (i < 0) else string[i] == ';'
+
     print(">>> ", "Starting Analysis of", file)
     sqlFile = open(file, 'r')
     queries = sqlFile.readlines()
@@ -243,7 +253,7 @@ class TestClient():
       line += 1
 
       # does it end with ';'?
-      if (self.eOfStatement(queries[line])):
+      if (eOfStatement(queries[line])):
         # This is the end of a command
         # command += 1
         partialCommand += queries[line]
@@ -272,15 +282,7 @@ class TestClient():
     print(">>> ", file, "analysis complete")
     sqlFile.close()
     return ret
-    
-  # Is this the end of a statement? (does it end with ';*' where * = 0 or more ' ')
-  def eOfStatement(self, string):
-    if (not len(string)):
-      return False
-    i = len(string) - 1
-    while(i >= 0 and (string[i] == ' ' or string[i] == '\n')):
-      i -= 1
-    return False if (i < 0) else string[i] == ';'
+
 
 # A class designed to simplify interfacing with a sqlite3 database. 
 class Database():

@@ -73,7 +73,8 @@ queries = {
       ("selectUC1", 
       "Query: list all places, sort by name")
       : 
-       [('Alensberb', '4322 happy st', 'Tacoma', 'WA', '98765'), 
+       [
+        ('Alensberb', '4322 happy st', 'Tacoma', 'WA', '98765'), 
         ('Elk Ridge', '1234 J st', 'Bellingham', 'WA', '98765'), 
         ('Juanita Beach', '1234 Happy st', 'Tacoma', 'WA', '98765'), 
         ("Low's Point", '1234 Jerril Way', 'Tacoma', 'WA', '98765')
@@ -81,7 +82,8 @@ queries = {
       ("selectUC2", 
       "Query: list all projects, sort by location")
       : 
-       [('Elk Ridge', 'Wedding', 'James', 'May', '2021-03-16'), 
+       [
+        ('Elk Ridge', 'Wedding', 'James', 'May', '2021-03-16'), 
         ('Elk Ridge', 'Race', 'Kathy', 'Dugolna', '2021-03-16'), 
         ('Juanita Beach', 'Race', 'James', 'May', '2021-03-13'), 
         ("Low's Point", 'Wedding', 'James', 'May', '2021-03-14')
@@ -89,7 +91,8 @@ queries = {
       ("selectUC3", 
       "Query: list all places that projects are taking place at.")
       : 
-       [('Juanita Beach',), 
+       [
+        ('Juanita Beach',), 
         ('Elk Ridge',), 
         ("Low's Point",)
        ],       
@@ -100,7 +103,6 @@ queries = {
 #   Expects each table to have its own create path and 
 #   that sql code is in a .<ext> file
 databaseFilePath = "database/exampleDatabaseFile.db"
-dropPath = "drop/"
 createPath = "create/"
 insertPath = "insert/"
 selectPath = "query/"
